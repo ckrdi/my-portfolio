@@ -1,9 +1,53 @@
+import { NavLink } from "react-router-dom";
+import { SocialIcon } from "react-social-icons";
+
 const Navbar = () => {
   return (
-    <div>
-      <h1>Nav</h1>
-    </div>
-  )
-}
+    <header className="bg-gray-900">
+      <div className="grid py-3 px-3 cursive md:grid-cols-2">
+        <nav className="grid sm:grid-cols-3">
+          <NavLink
+            to="/"
+            exact
+            activeClassName="text-gray-200 bg-gray-500"
+            className="flex align-middle items-center justify-center rounded text-gray-100 hover:text-gray-300"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/project"
+            activeClassName="text-gray-200 bg-gray-500"
+            className="flex align-middle items-center justify-center rounded text-gray-100 hover:text-gray-300"
+          >
+            Projects
+          </NavLink>
+          <NavLink
+            to="/about"
+            activeClassName="text-gray-200 bg-gray-500"
+            className="flex align-middle items-center justify-center rounded text-gray-100 hover:text-gray-300"
+          >
+            About me
+          </NavLink>
+        </nav>
+        <div className="flex py-3 md:justify-end">
+          <SocialIcon
+            url="https://www.linkedin.com/in/cokorda-agung-yudhana-505a9b66/"
+            className="mr-4"
+            target="_blank"
+            fgColor="#fff"
+            style={{ height: 35, width: 35 }}
+          />
+          <SocialIcon
+            url="https://github.com/ckrdi"
+            className="mr-4"
+            target="_blank"
+            fgColor="#fff"
+            style={{ height: 35, width: 35 }}
+          />
+        </div>
+      </div>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;
