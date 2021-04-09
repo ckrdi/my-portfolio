@@ -1,7 +1,7 @@
 import image from "../nile-river.jpg";
 const Home = () => {
   return (
-    <main className="max-h-screen">
+    <main className="max-h-screen bg-white">
       <img
         src={image}
         alt="Nile river seen from space"
