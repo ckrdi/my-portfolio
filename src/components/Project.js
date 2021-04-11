@@ -18,14 +18,22 @@ const Project = () => {
   }, []);
   return (
     <main className="bg-gray-100 min-h-screen p-12 cursive">
-      <section className="container mx-auto">
+      <section className="container mx-auto text-center">
         <h1 className="text-xl flex justify-center">My Projects</h1>
-        <h5 className="text-lg text-gray-500 flex justify-center mb-12">
+        <h5 className="text-lg text-gray-500 flex justify-center pb-2">
           Only my recents projects are displayed below. You can visit my github
           to view all the projects I did.
         </h5>
-        <section className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projectData &&
+        <a href="https://github.com/ckrdi">
+          <span className="rounded-lg shadow-md text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300 mb-12">
+            Visit the github{" "}
+            <span role="img" aria-label="right pointer">
+              👉
+            </span>
+          </span>
+        </a>
+        <section className="grid text-left gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+          {projectData ? (
             projectData.map((project) => (
               <Link
                 to={"/project/" + project.slug.current}
@@ -39,7 +47,7 @@ const Project = () => {
                     <p className="my-6 text-lg text-gray-600">
                       {project.description}
                     </p>
-                    <span className="text-red-500 text-lg font-bold hover:underline hover:text-red-800">
+                    <span className=" text-base rounded-lg shadow-md text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300">
                       View the project{" "}
                       <span role="img" aria-label="right pointer">
                         👉
@@ -48,7 +56,10 @@ const Project = () => {
                   </div>
                 </article>
               </Link>
-            ))}
+            ))
+          ) : (
+            <h5 className="text-lg text-gray-500">LOADING...</h5>
+          )}
         </section>
       </section>
     </main>
