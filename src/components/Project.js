@@ -24,7 +24,7 @@ const Project = () => {
           Only my recents projects are displayed below. You can visit my github
           to view all the projects I did.
         </h5>
-        <a href="https://github.com/ckrdi">
+        <a href="https://github.com/ckrdi" target="_blank" rel="noreferrer">
           <span className="rounded-lg shadow-md text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300 mb-12">
             Visit the github{" "}
             <span role="img" aria-label="right pointer">

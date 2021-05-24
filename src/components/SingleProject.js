@@ -40,7 +40,11 @@ const SingleProject = () => {
           </p>
           <p className="flex justify-center gap-3 pt-3 pb-10">
             {singleProject[0].linkDemoApp && (
-              <a href={singleProject[0].linkDemoApp}>
+              <a
+                href={singleProject[0].linkDemoApp}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <button className="rounded-lg shadow-md text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300">
                   Demo App{" "}
                   <span role="img" aria-label="right pointer">
@@ -50,7 +54,11 @@ const SingleProject = () => {
               </a>
             )}
             {singleProject[0].linkGithub && (
-              <a href={singleProject[0].linkGithub}>
+              <a
+                href={singleProject[0].linkGithub}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <button className="rounded-lg shadow-md text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300">
                   Github Repo{" "}
                   <span role="img" aria-label="right pointer">
