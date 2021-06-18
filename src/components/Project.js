@@ -11,27 +11,29 @@ const Project = () => {
       title,
       slug,
       description,
+      "imageUrl": image.asset->url
     }`
       )
-      .then((data) => setProjectData(data))
+      .then((data) => {
+        return setProjectData(data);
+      })
       .catch((err) => console.log(err));
   }, []);
   return (
-    <main className="bg-gray-100 min-h-screen p-12 cursive">
-      <section className="container mx-auto text-center">
-        <h1 className="text-xl flex justify-center">My Projects</h1>
-        <h5 className="text-lg text-gray-500 flex justify-center pb-2">
-          Only my recents projects are displayed below. You can visit my github
-          to view all the projects I did.
-        </h5>
-        <a href="https://github.com/ckrdi" target="_blank" rel="noreferrer">
-          <span className="rounded-lg shadow-md text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300 mb-12">
-            Visit the github{" "}
-            <span role="img" aria-label="right pointer">
-              👉
+    <main className="bg-gradient-to-r from-green-300 to-blue-300 min-h-screen p-12 pt-36">
+      <section className="mx-auto text-center">
+        <h1 className="text-xl">My Projects</h1>
+
+        <p className="text-lg text-gray-500 pt-2 pb-4">
+          Only my recents projects are displayed below. You can{" "}
+          <a href="https://github.com/ckrdi" target="_blank" rel="noreferrer">
+            <span className="font-bold underline hover:text-gray-900">
+              visit my github
             </span>
-          </span>
-        </a>
+          </a>{" "}
+          to view all the projects I did.
+        </p>
+
         <section className="grid text-left gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
           {projectData ? (
             projectData.map((project) => (
@@ -39,20 +41,26 @@ const Project = () => {
                 to={"/project/" + project.slug.current}
                 key={project.slug.current}
               >
-                <article className="relative rounded-lg shadow-xl bg-white p-5 md:p-10 lg:p-15">
-                  <h3 className="text-gray-700 text-xl font-bold mb-2 hover:text-gray-900">
-                    {project.title}
-                  </h3>
-                  <div className="text-gray-500 text-xs space-x-4">
-                    <p className="my-6 text-lg text-gray-600">
-                      {project.description}
-                    </p>
-                    <span className=" text-base rounded-lg shadow-md text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300">
-                      View the project{" "}
-                      <span role="img" aria-label="right pointer">
-                        👉
+                <article className="rounded-lg bg-white">
+                  <div
+                    className="project-image rounded-t-lg"
+                    style={{ backgroundImage: `url(${project.imageUrl})` }}
+                  ></div>
+                  <div className="p-5 md:p-10 lg:p-15">
+                    <h3 className="text-gray-700 text-xl font-bold mb-2 hover:text-gray-900">
+                      {project.title}
+                    </h3>
+                    <div className="text-gray-500 text-xs space-x-4">
+                      <p className="my-6 text-lg text-gray-600">
+                        {project.description}
+                      </p>
+                      <span className="text-base rounded-lg text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300">
+                        View the project{" "}
+                        <span role="img" aria-label="right pointer">
+                          👉
+                        </span>
                       </span>
-                    </span>
+                    </div>
                   </div>
                 </article>
               </Link>

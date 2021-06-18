@@ -23,6 +23,11 @@ export default {
       type: "text",
     },
     {
+      name: "image",
+      title: "Image",
+      type: "image",
+    },
+    {
       name: "projectType",
       title: "Project Type",
       type: "string",

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
-import "./SingleProject.css";
 
 const SingleProject = () => {
   const [singleProject, setSingleProject] = useState(null);
@@ -25,15 +24,12 @@ const SingleProject = () => {
     return <h1>LOADING...</h1>;
   } else {
     return (
-      <main className="bg-gray-100 min-h-screen p-5 cursive">
-        <article className="container mx-auto relative rounded-lg shadow-xl bg-white p-5 md:p-10 lg:p-15 max-w-3xl">
+      <main className="bg-gradient-to-r from-green-300 to-blue-300 min-h-screen p-12 pt-36">
+        <article className="mx-auto rounded-lg bg-white p-5 md:p-10 lg:p-15">
           <h1 className="text-xl pb-3">{singleProject[0].title}</h1>
           <p className="pb-3 border-btm">
             {singleProject[0].tags.map((tag, i) => (
-              <span
-                key={i}
-                className="rounded-lg shadow-md bg-gray-100 px-1 m-1"
-              >
+              <span key={i} className="rounded-lg bg-gray-300 px-1 m-1">
                 {tag}
               </span>
             ))}
@@ -45,7 +41,7 @@ const SingleProject = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <button className="rounded-lg shadow-md text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300">
+                <button className="rounded-lg text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300">
                   Demo App{" "}
                   <span role="img" aria-label="right pointer">
                     👉
@@ -59,7 +55,7 @@ const SingleProject = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <button className="rounded-lg shadow-md text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300">
+                <button className="rounded-lg text-gray-100 bg-gray-900 py-1 px-2 font-bold hover:underline hover:text-yellow-300">
                   Github Repo{" "}
                   <span role="img" aria-label="right pointer">
                     👉

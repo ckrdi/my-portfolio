@@ -3,8 +3,8 @@ import { SocialIcon } from "react-social-icons";
 
 const Navbar = () => {
   return (
-    <header className="bg-gray-900">
-      <div className="grid py-3 px-3 cursive md:grid-cols-2">
+    <header className="bg-gray-900 top-0 fixed z-10">
+      <div className="grid p-1 cursive md:grid-cols-2">
         <nav className="grid sm:grid-cols-3">
           <NavLink
             to="/"
@@ -29,18 +29,19 @@ const Navbar = () => {
             About me
           </NavLink>
         </nav>
-        <div className="flex py-3 md:justify-end">
+        <div className="flex py-1 pl-4 md:justify-end">
           <SocialIcon
             url="https://www.linkedin.com/in/cokorda-agung-yudhana-505a9b66/"
-            className="mr-4"
             target="_blank"
+            rel="noopener noreferrer"
             fgColor="#fff"
             style={{ height: 35, width: 35 }}
           />
           <SocialIcon
             url="https://github.com/ckrdi"
-            className="mr-4"
+            className="ml-4"
             target="_blank"
+            rel="noopener noreferrer"
             fgColor="#fff"
             style={{ height: 35, width: 35 }}
           />
